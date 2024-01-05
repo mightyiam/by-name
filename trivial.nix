@@ -7,10 +7,10 @@ callPackage: path: let
     then [
       {
         name = filename;
-        value = callPackage "${path}/${filename}/package.nix" {};
+        value = callPackage (path + "/${filename}/package.nix") {};
       }
     ]
     else [];
-   nameValuePairs = builtins.concatMap maybeNameValuePair filenames;
+  nameValuePairs = builtins.concatMap maybeNameValuePair filenames;
 in
   builtins.listToAttrs nameValuePairs
