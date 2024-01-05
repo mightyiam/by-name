@@ -6,7 +6,7 @@ Inspired by [Nixpkgs' by-name directory structure](https://github.com/NixOS/nixp
 - Trivial; exists merely to avoid this particular boilerplate.
 - No dependencies.
 
-Available under `lib.byName`. Takes two arguments:
+Available under `lib.trivial`. Takes two arguments:
 
 1. [A `callPackage` function](https://nixos.org/guides/nix-pills/callpackage-design-pattern).
 2. A path to a directory containing package directories.
