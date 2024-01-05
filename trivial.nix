@@ -7,7 +7,7 @@ callPackage: path: let
     then [
       {
         name = filename;
-        value = callPackage "${path}/${filename}/package.nix" {};
+        value = callPackage (builtins.trace (path + "/api") (builtins.trace "${path + "/api"}" "${path}/${filename}/package.nix")) {};
       }
     ]
     else [];
