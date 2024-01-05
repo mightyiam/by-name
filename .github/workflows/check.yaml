@@ -1,0 +1,17 @@
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - run: cd test
+      # https://github.com/NixOS/nix/issues/3978#issuecomment-952418478
+      - run: nix flake lock --update-input by-name
+      - run: nix flake check
