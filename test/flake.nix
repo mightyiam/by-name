@@ -11,8 +11,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
     byName = by-name.lib.trivial pkgs.callPackage;
     packages = byName ./packages;
-    actual = packages.path;
-    expected = ./packages/path;
   in
-    assert actual == expected; {};
+    assert packages.path == ./packages/path;
+    assert packages.dependent == "dependency"; {};
 }
