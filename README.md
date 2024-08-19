@@ -1,3 +1,5 @@
+Deprecated in favor of `lib.filesystem.packagesFromDirectoryRecursive`.
+
 Trivial, Nixpkgs-inspired pkgs/by-name implementation
 
 Inspired by [Nixpkgs' by-name directory structure](https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/README.md).
